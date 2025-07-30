@@ -168,38 +168,46 @@ const About = () => {
           <Grid container spacing={4} justifyContent="center">
             {[
               {
-                name: 'Rajesh Kumar',
-                role: 'Founder & CEO',
-                image: '/images/team/rajesh.jpg',
-                description: 'Agricultural expert with 15+ years of experience in agri-tech.'
+                name: 'Priyranjan Kumar',
+                role: 'Full Stack Developer',
+                description: 'Expert in building scalable web applications with modern technologies.'
               },
               {
-                name: 'Priya Sharma',
-                role: 'Head of Operations',
-                image: '/images/team/priya.jpg',
-                description: 'Specialist in supply chain and farmer relations.'
+                name: 'Rohith M',
+                role: 'Frontend Developer',
+                description: 'Specialist in creating responsive and intuitive user interfaces.'
               },
               {
-                name: 'Amit Patel',
-                role: 'CTO',
-                image: '/images/team/amit.jpg',
-                description: 'Technology leader with expertise in building scalable platforms.'
+                name: 'Sujith S',
+                role: 'Backend Developer',
+                description: 'Skilled in server-side development and database management.'
+              },
+              {
+                name: 'Srithar S',
+                role: 'UI/UX Designer',
+                description: 'Passionate about creating beautiful and user-friendly experiences.'
               },
             ].map((member, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3 }}>
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3, textAlign: 'center' }}>
                   <Avatar 
-                    src={member.image} 
-                    alt={member.name}
-                    sx={{ width: 150, height: 150, mb: 2 }}
-                  />
+                    sx={{ 
+                      width: 120, 
+                      height: 120, 
+                      mb: 2,
+                      bgcolor: theme.palette.primary.main,
+                      fontSize: '2.5rem'
+                    }}
+                  >
+                    {member.name.split(' ').map(n => n[0]).join('')}
+                  </Avatar>
                   <Typography variant="h6" component="h3" gutterBottom>
                     {member.name}
                   </Typography>
                   <Typography color="primary" gutterBottom>
                     {member.role}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" align="center">
+                  <Typography variant="body2" color="textSecondary">
                     {member.description}
                   </Typography>
                 </Card>
